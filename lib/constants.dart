@@ -1,0 +1,8 @@
+const String PREF_APP_ID = "PREF_RAVEN_APP_ID";
+const String PREF_USER_ID = "PREF_RAVEN_USER_ID";
+const String PREF_USER_DEVICE_ID = "PREF_USER_DEVICE_ID";
+const String PREF_USER_FCM_TOKEN = "PREF_USER_FCM_TOKEN";
+const String PREF_SECRET_KEY = "PREF_SECRET_KEY";
+const String PREF_RAVEN_USER = "PREF_RAVEN_USER";
+
+const String PLATFORM = "android";
