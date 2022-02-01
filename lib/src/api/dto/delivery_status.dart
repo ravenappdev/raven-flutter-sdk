@@ -11,10 +11,10 @@ class DeliveryStatus {
   String? notificationId;
 
   @JsonKey(name: 'timestamp')
-  int? timestamp = DateTime.now().microsecondsSinceEpoch;
+  int? timestamp;
 
   @JsonKey(name: 'current_timestamp')
-  int? currentTimestamp = DateTime.now().microsecondsSinceEpoch;
+  int? currentTimestamp;
 
   @JsonKey(name: 'type')
   Status? type = Status.DELIVERED;
@@ -24,7 +24,10 @@ class DeliveryStatus {
     this.timestamp,
     this.currentTimestamp,
     this.type,
-  });
+  }){
+    timestamp ??= DateTime.now().microsecondsSinceEpoch;
+    currentTimestamp ??= DateTime.now().microsecondsSinceEpoch;
+  }
 
   factory DeliveryStatus.fromJson(Map<String, dynamic> json) => _$DeliveryStatusFromJson(json);
 
