@@ -19,6 +19,7 @@ import 'package:raven_flutter_sdk/src/api/dto/raven_message.dart';
 import 'package:raven_flutter_sdk/src/models/status.dart';
 import 'package:raven_flutter_sdk/src/models/user.dart';
 
+export 'package:raven_flutter_sdk/src/models/status.dart';
 
 abstract class RavenSdk {
   static const String RAVEN_NOTIFICATION_ID = "raven_notification_id";
