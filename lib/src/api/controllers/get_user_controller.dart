@@ -1,5 +1,6 @@
 import 'package:raven_flutter_sdk/raven_flutter_sdk.dart';
 import 'package:raven_flutter_sdk/src/api/api_endpoints.dart';
+import 'package:raven_flutter_sdk/src/api/api_provider.dart';
 import 'package:raven_flutter_sdk/src/models/user.dart';
 
 class GetUserController {
@@ -9,7 +10,7 @@ class GetUserController {
 
   Future<void> start(String appId, String userId) async {
     try {
-      User? user = await ApiEndpoints().getUser(appId, userId);
+      User? user = await ApiEndpoints(baseUrl: ApiProvider.baseUrl).getUser(appId, userId);
       await setCurrentUser(user);
       callback?.onSuccess();
     } catch (err,st) {

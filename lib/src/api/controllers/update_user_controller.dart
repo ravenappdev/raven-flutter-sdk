@@ -1,5 +1,6 @@
 import 'package:raven_flutter_sdk/raven_flutter_sdk.dart';
 import 'package:raven_flutter_sdk/src/api/api_endpoints.dart';
+import 'package:raven_flutter_sdk/src/api/api_provider.dart';
 import 'package:raven_flutter_sdk/src/models/user.dart';
 
 class UpdateUserController {
@@ -9,7 +10,7 @@ class UpdateUserController {
 
   Future<void> start(String appId, User user) async {
     try {
-      User? updatedUser  = await ApiEndpoints().createUpdateUser(appId, user);
+      User? updatedUser  = await ApiEndpoints(baseUrl: ApiProvider.baseUrl).createUpdateUser(appId, user);
       User? currentUser = getCurrentUser();
       
       if(currentUser == null && updatedUser != null){

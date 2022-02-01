@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:raven_flutter_sdk/constants.dart';
 import 'package:raven_flutter_sdk/raven_flutter_sdk.dart';
 import 'package:raven_flutter_sdk/src/api/api_endpoints.dart';
+import 'package:raven_flutter_sdk/src/api/api_provider.dart';
 import 'package:raven_flutter_sdk/src/models/device.dart';
 import 'package:raven_flutter_sdk/src/models/user.dart';
 import 'package:raven_flutter_sdk/src/utils/prefs.dart';
@@ -13,15 +16,21 @@ class UpdateTokenController {
   Future<void> start(String appId, String userId, String deviceToken, bool isUpdate) async {
     try {
       Device? device;
+      String? platform = ANDROID_PLATFORM;
+
+      if(Platform.isIOS) {
+        platform = IOS_PLATFORM;
+      }
+
       if (isUpdate) {
         String? deviceId = Prefs.getString(PREF_USER_DEVICE_ID, null);
         if (deviceId != null) {
-          device = await ApiEndpoints().updateDeviceToken(appId, userId, deviceId, 
-                                                          Device(fcmToken: deviceToken, platform: PLATFORM));
+          device = await ApiEndpoints(baseUrl: ApiProvider.baseUrl).updateDeviceToken(appId, userId, deviceId, 
+                                                          Device(fcmToken: deviceToken, platform: platform));
         } 
       } else {
-        device = await ApiEndpoints().addDeviceToken(appId, userId, 
-                                                      Device(fcmToken: deviceToken, platform: PLATFORM));
+        device = await ApiEndpoints(baseUrl: ApiProvider.baseUrl).addDeviceToken(appId, userId, 
+                                                      Device(fcmToken: deviceToken, platform: platform));
       }
      
       User? currentUser = getCurrentUser();

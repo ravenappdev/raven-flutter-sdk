@@ -5,4 +5,5 @@ const String PREF_USER_FCM_TOKEN = "PREF_USER_FCM_TOKEN";
 const String PREF_SECRET_KEY = "PREF_SECRET_KEY";
 const String PREF_RAVEN_USER = "PREF_RAVEN_USER";
 
-const String PLATFORM = "android";
+const String ANDROID_PLATFORM = "android";
+const String IOS_PLATFORM = "ios";
