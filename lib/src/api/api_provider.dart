@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 
 abstract class ApiProvider {
   static late final Dio _dio;
@@ -15,9 +16,13 @@ abstract class ApiProvider {
           'Authorization': 'AuthKey $secretKey',
           'Content-Type': 'application/json'
         });
+    
+    // if(kDebugMode){
+    //   baseUrl = "https://api.staging.ravenapp.dev/";
+    // }
   }
 
   static getHttpClient() => _dio;
 
-  static const baseUrl = "https://api.ravenapp.dev/";
+  static String? baseUrl = "https://api.ravenapp.dev/";
 }

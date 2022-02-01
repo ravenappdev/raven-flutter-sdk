@@ -1,5 +1,7 @@
 library raven_flutter_sdk;
 
+import 'dart:io';
+
 import 'package:raven_flutter_sdk/constants.dart';
 import 'package:raven_flutter_sdk/src/api/api_provider.dart';
 import 'package:raven_flutter_sdk/src/utils/prefs.dart';
@@ -127,13 +129,19 @@ abstract class RavenSdk {
     //check if token already present with server
     User? currentUser = getCurrentUser();
     var isUpdate = false;
+    String? platform = ANDROID_PLATFORM;
+
+    if(Platform.isIOS) {
+      platform = IOS_PLATFORM;
+    }
+
     for (var item in currentUser?.devices ?? []) {
-      if (item.fcmToken == token && item.platform == PLATFORM) {
+      if (item.fcmToken == token && item.platform == platform) {
         return;
       }
 
       if (item.deviceSid == Prefs.getString(PREF_USER_DEVICE_ID, null)) {
-        if (item.fcmToken != token && item.platform == PLATFORM) {
+        if (item.fcmToken != token && item.platform == platform) {
           isUpdate = true;
         }
       }
@@ -184,6 +192,7 @@ abstract class RavenSdk {
     //reset the preferences
     await Prefs.putString(PREF_USER_ID, null);
     await Prefs.putString(PREF_RAVEN_USER, null);
+    await Prefs.putString(PREF_USER_FCM_TOKEN, null);
   }
 
   static Future<void> _fetchCurrentUser() async {

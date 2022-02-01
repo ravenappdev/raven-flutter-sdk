@@ -1,6 +1,7 @@
 import 'package:raven_flutter_sdk/constants.dart';
 import 'package:raven_flutter_sdk/raven_flutter_sdk.dart';
 import 'package:raven_flutter_sdk/src/api/api_endpoints.dart';
+import 'package:raven_flutter_sdk/src/api/api_provider.dart';
 import 'package:raven_flutter_sdk/src/models/device.dart';
 import 'package:raven_flutter_sdk/src/models/user.dart';
 import 'package:raven_flutter_sdk/src/utils/prefs.dart';
@@ -15,7 +16,7 @@ class RemoveTokenController {
       String? deviceId = Prefs.getString(PREF_USER_DEVICE_ID, null);
       
       if(deviceId != null){
-        await ApiEndpoints().removeDeviceToken(appId, userId, deviceId);
+        await ApiEndpoints(baseUrl: ApiProvider.baseUrl).removeDeviceToken(appId, userId, deviceId);
       }
 
       User? currentUser = getCurrentUser();

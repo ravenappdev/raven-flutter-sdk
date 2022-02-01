@@ -9,7 +9,7 @@ import 'package:raven_flutter_sdk/src/api/dto/raven_message.dart';
 
 part 'api_endpoints.g.dart';
 
-@RestApi(baseUrl: ApiProvider.baseUrl)
+@RestApi(baseUrl: "https://api.ravenapp.dev/")
 abstract class ApiEndpoints {
   factory ApiEndpoints({String? baseUrl}) {
     return _ApiEndpoints(ApiProvider.getHttpClient(), baseUrl: baseUrl);

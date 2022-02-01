@@ -1,5 +1,6 @@
 import 'package:raven_flutter_sdk/raven_flutter_sdk.dart';
 import 'package:raven_flutter_sdk/src/api/api_endpoints.dart';
+import 'package:raven_flutter_sdk/src/api/api_provider.dart';
 import 'package:raven_flutter_sdk/src/api/dto/raven_message.dart';
 
 class CommunicationController {
@@ -9,7 +10,7 @@ class CommunicationController {
 
   Future<void> start(String appId, RavenMessage message) async {
     try {
-      await ApiEndpoints().sendCommunication(appId, message);
+      await ApiEndpoints(baseUrl: ApiProvider.baseUrl).sendCommunication(appId, message);
       callback?.onSuccess();
     } catch (err, st) {
       print(err);
