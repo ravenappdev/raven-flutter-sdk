@@ -18,10 +18,10 @@ class UpdateTokenController {
         if (deviceId != null) {
           device = await ApiEndpoints().updateDeviceToken(appId, userId, deviceId, 
                                                           Device(fcmToken: deviceToken, platform: PLATFORM));
-        } else {
-          device = await ApiEndpoints().addDeviceToken(appId, userId, 
-                                                       Device(fcmToken: deviceToken, platform: PLATFORM));
-        }
+        } 
+      } else {
+        device = await ApiEndpoints().addDeviceToken(appId, userId, 
+                                                      Device(fcmToken: deviceToken, platform: PLATFORM));
       }
      
       User? currentUser = getCurrentUser();

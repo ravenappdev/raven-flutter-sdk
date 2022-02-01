@@ -22,7 +22,7 @@ abstract class ApiEndpoints {
   Future<User?> getUser(@Path("appId") String appId, @Path("userId") String userId);
 
   @POST("v1/apps/{appId}/events/send")
-  Future<User?> sendCommunication(@Path("appId") String appId, @Body() RavenMessage? msg);
+  Future<void> sendCommunication(@Path("appId") String appId, @Body() RavenMessage? msg);
 
   @POST("v1/apps/{appId}/users/{userId}/devices")
   Future<Device?> addDeviceToken(@Path("appId") String appId, @Path("userId") String userId, @Body() Device? device);

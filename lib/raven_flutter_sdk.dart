@@ -145,7 +145,7 @@ abstract class RavenSdk {
     }
   }
 
-  Future<void> updateStatus(String notificationId, Status status) async {
+  static Future<void> updateStatus(String notificationId, Status status) async {
 
     DeliveryStatus deliveryStatus = DeliveryStatus(notificationId: notificationId, type: status);
     String? appId = Prefs.getString(PREF_APP_ID, null);
@@ -156,7 +156,7 @@ abstract class RavenSdk {
 
   }
 
-  Future<void> sendMessage(String template, String id, RavenResponseCallback? callback) async {
+  static Future<void> sendMessage(String template, String id, RavenResponseCallback? callback) async {
 
     _checkIfSDKInitialized();
 
@@ -204,7 +204,7 @@ abstract class RavenSdk {
       // throw error
       throw ArgumentError("App ID cannot be empty");
     }
-
+    await Prefs.init();
     await Prefs.putString(PREF_APP_ID, appId);
   }
 
