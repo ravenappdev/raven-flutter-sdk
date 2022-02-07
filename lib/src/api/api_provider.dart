@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 abstract class ApiProvider {
   static late final Dio _dio;
@@ -19,6 +20,7 @@ abstract class ApiProvider {
     
     // if(kDebugMode){
     //   baseUrl = "https://api.staging.ravenapp.dev/";
+    //   _dio.interceptors.add(PrettyDioLogger());
     // }
   }
 
