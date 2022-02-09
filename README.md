@@ -22,8 +22,17 @@ The Raven Flutter SDK allows you to -
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To use the features provided by the Raven Flutter SDK you need to integrate Firebase and handle the rendering of notifications in your Flutter application. Also, you must setup a Firebase Integration and create an event with a Push template on the Raven console. Let's begin by first integrating firebase in your fluter app.
+
+#Step - 1
+
+Pleas refer the following docs to create a firebase project and to integrate firebase on your flutter app to a new/existing firebase project for both android & ios plamtforms. 
+* https://firebase.flutter.dev/docs/overview
+* https://firebase.flutter.dev/docs/overview
+
+#Step - 2
+
+
 
 ## Usage
 
