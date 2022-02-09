@@ -11,12 +11,14 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Raven allows you to manage notifications across all channels at one place. Raven Flutter SDK provides method to connect to the Raven platform and get you quickly started with Raven features and start sending notificaions. 
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+The Raven Flutter SDK allows you to - 
+
+* Manage (Create/Update) your users and their preferences on Raven.
+* Update notification statuses to Raven for push notification tracking
 
 ## Getting started
 
