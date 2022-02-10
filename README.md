@@ -1,50 +1,36 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+---
+description: A guide to using the documentation
+---
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+# Home
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
+## Platform Documentation
 
-Raven allows you to manage notifications across all channels at one place. Raven Flutter SDK provides method to connect to the Raven platform and get you quickly started with Raven features and start sending notificaions. 
+If you want to know about the platform, follow our [Platform Documentation](platform/home.md). It will help you understand how to use the platform and get you started.&#x20;
 
-## Features
+## Get started with a Channel
 
-The Raven Flutter SDK allows you to - 
+Quickly get started with sending notifications to a channel.&#x20;
 
-* Manage (Create/Update) your users and their preferences on Raven.
-* Update notification statuses to Raven for push notification tracking
+* [Send Push Notifications](push/sending-push.md)
+* [Send SMS](sms/sending-sms/)
+* [Send Email](email/sending-email.md)
+* [Send WhatsApp](whatsapp/sending-whatsapp.md)
+* [Send Voice messages](voice/sending-voice.md)
+* [Send Slack](others/slack.md)
+* [Send Webhooks](others/webhooks.md)
 
-## Getting started
+## API Reference
 
-To use the features provided by the Raven Flutter SDK you need to integrate Firebase and handle the rendering of notifications in your Flutter application. Also, you must setup a Firebase Integration and create an event with a Push template on the Raven console. Let's begin by first integrating firebase in your fluter app.
+Please check the API Reference section for all API docs.
 
-#Step - 1
+## Credentials
 
-Pleas refer the following docs to create a firebase project and to integrate firebase on your flutter app to a new/existing firebase project for both android & ios plamtforms. 
-* https://firebase.flutter.dev/docs/overview
-* https://firebase.flutter.dev/docs/overview
+* Your Account has an API Key. Go to `Settings tab > Account` to view your API key.&#x20;
+* Similarly, the App you created has an App identifier called App ID. You can view it in the `Settings tab > App`.&#x20;
 
-#Step - 2
+You will need both these credentials in the API to trigger notifications.
 
+## Sandbox
 
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
-```dart
-const like = 'sample';
-```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+To help you fiddle with the platform, we have a sandbox created with default integrations in place. Check sandbox details [here](sandbox.md).
