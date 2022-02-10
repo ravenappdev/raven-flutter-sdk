@@ -11,28 +11,17 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-Raven allows you to manage notifications across all channels at one place. Raven Flutter SDK provides method to connect to the Raven platform and get you quickly started with Raven features and start sending notificaions. 
+TODO: Put a short description of the package here that helps potential users
+know whether this package might be useful for them.
 
 ## Features
 
-The Raven Flutter SDK allows you to - 
-
-* Manage (Create/Update) your users and their preferences on Raven.
-* Update notification statuses to Raven for push notification tracking
+TODO: List what your package can do. Maybe include images, gifs, or videos.
 
 ## Getting started
 
-To use the features provided by the Raven Flutter SDK you need to integrate Firebase and handle the rendering of notifications in your Flutter application. Also, you must setup a Firebase Integration and create an event with a Push template on the Raven console. Let's begin by first integrating firebase in your fluter app.
-
-#Step - 1
-
-Pleas refer the following docs to create a firebase project and to integrate firebase on your flutter app to a new/existing firebase project for both android & ios plamtforms. 
-* https://firebase.flutter.dev/docs/overview
-* https://firebase.flutter.dev/docs/overview
-
-#Step - 2
-
-
+TODO: List prerequisites and provide or point to information on how to
+start using the package.
 
 ## Usage
 
