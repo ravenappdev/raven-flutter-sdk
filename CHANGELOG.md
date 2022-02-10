@@ -1,3 +1,3 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+- Raven Flutter SDK to use Push notifications with Raven
