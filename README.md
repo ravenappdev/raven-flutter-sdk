@@ -108,7 +108,7 @@ Once you are done with the setup, you can follow the steps below to test -&#x20;
 ### Demo
 
 Our Flutter demo app shows this integration in detail. Please check the demo app&#x20;
-[Raven Flutter SDK Demo App] (https://github.com/ravenappdev/raven-flutter-demo)
+[Raven Flutter SDK Demo App](https://github.com/ravenappdev/raven-flutter-demo)
 
 
 ## 🛎️ Useful Links
